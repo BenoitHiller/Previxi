@@ -6,6 +6,10 @@
   padding-top: 20px;
 }
 
+#location {
+  margin-left:20px
+}
+
 #bottom-bar {
   padding-bottom: 20px;
 }
@@ -18,3 +22,19 @@
   width:80px;
 }
 
+body {
+
+  background-image: linear-gradient(left , rgb(36,36,79) 22%, rgb(15,15,63) 89%);
+background-image: -o-linear-gradient(left , rgb(36,36,79) 22%, rgb(15,15,63) 89%);
+background-image: -moz-linear-gradient(left , rgb(36,36,79) 22%, rgb(15,15,63) 89%);
+background-image: -webkit-linear-gradient(left , rgb(36,36,79) 22%, rgb(15,15,63) 89%);
+background-image: -ms-linear-gradient(left , rgb(36,36,79) 22%, rgb(15,15,63) 89%);
+
+background-image: -webkit-gradient(
+	linear,
+	left bottom,
+	right bottom,
+	color-stop(0.22, rgb(36,36,79)),
+	color-stop(0.89, rgb(15,15,63))
+);
+}

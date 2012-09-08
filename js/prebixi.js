@@ -1,7 +1,15 @@
 var convertMinutes = function(minutes) {
-  var hours = minutes % 24;
-  var relative_minutes = minutes / 24;
-  return String(hours) + ":" + String(minutes); 
+  var hours = Math.floor(minutes / 60);
+  var relative_minutes = Math.floor(minutes % 60);
+  return padIntToString(hours) + ":" + padIntToString(relative_minutes); 
+}
+
+var padIntToString = function(num) {
+  str = String(num);
+  if (str.length === 1) {
+    str = "0" + str;
+  }
+  return str
 }
 
 function getRadiusAlpha(numBikes, numEmptyDocks) {
