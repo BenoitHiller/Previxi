@@ -50,7 +50,6 @@ $(function() {
   var classesAdded = {};
 
   function updateMap(minute) {
-    stationLayerGroup.clearLayers()
     var stations = [];
     console.log(stations);
     $.getJSON('data/stations-' + minute + '.json', function(data) {
@@ -85,6 +84,7 @@ $(function() {
         }
       });
       console.log("Done");
+      stationLayerGroup.clearLayers()
       stationLayerGroup.addLayer(L.layerGroup(stations));
     });
   }
