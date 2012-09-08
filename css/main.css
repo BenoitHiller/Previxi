@@ -1,12 +1,12 @@
 #top-bar, #center-content, #bottom-bar {
   background-color: #BBD8E9;
-  height:100%;
 }
 
-.container-fluid {
-  height:100%;
+#top-bar {
+  padding-top: 20px;
 }
 
-.span3 input {
-  width:120px;
+#bottom-bar {
+  padding-bottom: 20px;
 }
+
