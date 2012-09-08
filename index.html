@@ -8,6 +8,7 @@
     <link href="css/bootstrap.css" rel="stylesheet">
     <link href="css/main.css" rel="stylesheet">
     <link href="css/Aristo/Aristo.css" rel="stylesheet">
+    <link href="css/datepicker.css" rel="stylesheet">
     <style>
       body {
         padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
@@ -42,10 +43,15 @@
       </div>
 
       <div class="row" id="bottom-bar">
-        <div class="span2">
+        <div class="span3">
+          <div class="input-append date" id="dp" data-date="12-02-2012" data-date-format="dd-mm-yyyy">
+            <input class="span2" size="16" type="text" value="12-02-2012">
+            <span class="add-on"><i class="icon-th"></i></span>
+          </div>
         </div>
-        <div class="span10">
-          <div id="horizSlider"></div>
+        <div id="horizSlider" class="span5"></div>
+        <div class="span2 pull-right">
+          <span class="input uneditable-input" id="time">00:00</span>
         </div>
       </div>
     </div>
@@ -55,5 +61,6 @@
     <script src="http://cdn.leafletjs.com/leaflet-0.4.4/leaflet.js"></script>
     <script src="js/bootstrap.js"></script>
     <script src="js/prebixi.js"></script>
+    <script src="js/bootstrap-datepicker.js"></script>
   </body>
 </html>
