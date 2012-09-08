@@ -93,7 +93,7 @@ $(function() {
 
   $('#horizSlider').slider({
     max: 1439,
-    change: function(event, ui) {
+    slide: function(event, ui) {
       console.log("Value is now: " + ui.value);
       $("#time").text(convertMinutes(ui.value));
       updateMap(ui.value);
