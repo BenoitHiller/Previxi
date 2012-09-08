@@ -100,6 +100,21 @@ $(function() {
     }
   }).width(470);
 
+  $("form#location-form").unbind();
+  $("form#location-form").submit(function() {
+    console.log("Submittin' time: " + $("#location-input").val());
+    var url = 'http://geocoder.ca/?locate=' + $("#location-input").val()  + '+montreal+qc&geoit=xml&jsonp=1&callback=?';
+    $.getJSON(url, null, function(data) {
+      var latlng = new L.LatLng(parseFloat(data.latt), parseFloat(data.longt));
+      map.setView(latlng, 15);
+
+      var locationMarker = L.marker(latlng,
+                                    { title: $("#location-input").val() }).addTo(map);
+    });
+
+    return false;
+  });
+
   $("#dp").datepicker();
 
 });
