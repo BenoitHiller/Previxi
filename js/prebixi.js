@@ -50,7 +50,6 @@ $(function() {
   var classesAdded = {};
 
   function updateMap(minute) {
-    stationLayerGroup.clearLayers()
     var stations = [];
     console.log(stations);
     $.getJSON('data/stations-' + minute + '.json', function(data) {
@@ -69,7 +68,7 @@ $(function() {
 
           var className = ['circle',parseInt(radiusAlpha[1]*100)].join('-');
           if (classesAdded[className] === undefined) {
-            var css = "." + className + " { border-radius: 50%; border: solid 1px rgb(255, 0, 0); background-color: rgba(255, 0, 0, " + radiusAlpha[1] + ");}";
+            var css = "." + className + " { border-radius: 50%; border: solid 1px rgb(250, 0, 210); background-color: rgba(250, 0, 210, " + radiusAlpha[1] + ");}";
             var style = $('<style>' + css + '</style>');
             $('html > head').append(style);
             classesAdded[className] = 1;
@@ -85,6 +84,7 @@ $(function() {
         }
       });
       console.log("Done");
+      stationLayerGroup.clearLayers()
       stationLayerGroup.addLayer(L.layerGroup(stations));
     });
   }
@@ -99,6 +99,21 @@ $(function() {
       updateMap(ui.value);
     }
   }).width(470);
+
+  $("form#location-form").unbind();
+  $("form#location-form").submit(function() {
+    console.log("Submittin' time: " + $("#location-input").val());
+    var url = 'http://geocoder.ca/?locate=' + $("#location-input").val()  + '+montreal+qc&geoit=xml&jsonp=1&callback=?';
+    $.getJSON(url, null, function(data) {
+      var latlng = new L.LatLng(parseFloat(data.latt), parseFloat(data.longt));
+      map.setView(latlng, 15);
+
+      var locationMarker = L.marker(latlng,
+                                    { title: $("#location-input").val() }).addTo(map);
+    });
+
+    return false;
+  });
 
   $("#dp").datepicker();
 
