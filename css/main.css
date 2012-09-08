@@ -1,0 +1,12 @@
+#top-bar, #center-content, #bottom-bar {
+  background-color: #BBD8E9;
+  height:100%;
+}
+
+.container-fluid {
+  height:100%;
+}
+
+.span3 input {
+  width:120px;
+}
