@@ -2,9 +2,14 @@
   background-color: #353565;
 }
 
+h1 {
+  font-size:80px;
+}
+
 #top-bar {
   padding-top: 30px;
 }
+
 
 #location-form {
   margin-left:30px
