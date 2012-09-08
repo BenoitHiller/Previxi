@@ -69,7 +69,7 @@ $(function() {
 
           var className = ['circle',parseInt(radiusAlpha[1]*100)].join('-');
           if (classesAdded[className] === undefined) {
-            var css = "." + className + " { border-radius: 50%; border: solid 1px rgb(255, 0, 0); background-color: rgba(255, 0, 0, " + radiusAlpha[1] + ");}";
+            var css = "." + className + " { border-radius: 50%; border: solid 1px rgb(250, 0, 210); background-color: rgba(250, 0, 210, " + radiusAlpha[1] + ");}";
             var style = $('<style>' + css + '</style>');
             $('html > head').append(style);
             classesAdded[className] = 1;
